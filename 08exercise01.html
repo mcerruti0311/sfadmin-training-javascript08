@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title></title>
+    <script>
+      Card = new Object();
+      Card.info = 'this is my Card object';
+      function setSuit() {
+        alert(this.info);
+      };
+      Card.showInfo = setSuit;
+    </script>
+  </head>
+  <body>
+    <script>
+      Card.showInfo();
+    </script>
+  </body>
+</html>
