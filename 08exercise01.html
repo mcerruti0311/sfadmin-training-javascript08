@@ -1,18 +1,57 @@
 <html>
   <head>
-    <title></title>
+    <title>Chapter 08 / Exercise 01</title>
     <script>
-      Card = new Object();
-      Card.info = 'this is my Card object';
-      function setSuit() {
-        alert(this.info);
-      };
-      Card.showInfo = setSuit;
+    // object created using object constructor function.
+      function cardObject(suit, face) {
+        this.info = 'this is my Card object';
+        this.suit = suit;
+        this.face = face;
+        this.card = this.face + " of " + this.suit;
+        var faces =
+          [
+            'Ace',
+            '2',
+            '3',
+            '4',
+            '5',
+            '6',
+            '7',
+            '8',
+            '9',
+            '10',
+            'Jack',
+            'Queen',
+            'King'
+          ];
+        var suits = ['Diamonds','Hearts','Spades','Clubs'];
+          this.showInfo = function() {
+            alert(this.card);
+          }
+          this.newCard = function(newSuit, newFace) {
+            this.suit = newSuit;
+            this.face = newFace;
+            this.card = this.face + " of " + this.suit;
+            // alert(this.card);
+          }
+          this.setSuit = function(suitNumber,faceIndex) {
+            this.newCard(suits[suitNumber], faces[faceIndex]);
+        }
+      }
+      var newCardObject = new cardObject('Hearts','Ace');
     </script>
   </head>
   <body>
     <script>
-      Card.showInfo();
+      newCardObject.showInfo();
+      newCardObject.newCard('Clubs','2');
+      newCardObject.showInfo();
+      newCardObject.setSuit
+        (
+          Math.round(Math.random() * 3),
+          Math.round(Math.random() * 13)
+        );
+      newCardObject.showInfo();
     </script>
   </body>
 </html>
