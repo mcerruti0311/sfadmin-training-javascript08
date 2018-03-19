@@ -1,0 +1,25 @@
+<html>
+  <head><title>Chapter 8, Exercise 2</title>
+    <script>
+      function yesterdayDate() {
+        this.info = 'I am new date object';
+        this.today = new Date();
+        this.yesterday = new Date();
+        this.yesterday = this.today;
+        this.yesterday.
+          setDate(this.today.getDate() - 1);
+        this.showInfo = function() {
+          alert(
+              this.yesterday
+          )
+        };
+      }
+      var myNewDateObject = new yesterdayDate();
+    </script>
+  </head>
+  <body>
+    <script>
+      myNewDateObject.showInfo();
+    </script>
+  </body>
+</html>
