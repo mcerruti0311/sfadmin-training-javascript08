@@ -34,10 +34,15 @@
             this.card = this.face + " of " + this.suit;
             // alert(this.card);
           }
-          this.setSuit = function(suitNumber,faceIndex) {
-            this.newCard(suits[suitNumber], faces[faceIndex]);
-        }
-      }
+
+              this.setSuit = function(suitNumber,faceIndex) {
+                if (suitNumber < suits.length && faceIndex < faces.length) {
+                  this.newCard(suits[suitNumber], faces[faceIndex]);
+                } else {
+                    alert("This is not a card");
+                }
+              }
+          }
       var newCardObject = new cardObject('Hearts','Ace');
     </script>
   </head>
